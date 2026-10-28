@@ -27,6 +27,7 @@ comparison.png
 novel_views.png
 *.gif
 !Web App/backend/sample.gif
+!sample_video.gif
 
 # --- OS / editor cruft ---
 .DS_Store
