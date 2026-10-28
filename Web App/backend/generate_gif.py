@@ -2,9 +2,10 @@ import sys
 import os
 
 # Set up paths
-BACKEND_DIR = os.path.dirname(__file__)
-MODEL_DIR = r"e:\NERF-V1\NERF-V1\Model"
-sys.path.insert(0, MODEL_DIR)
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.abspath(os.path.join(BACKEND_DIR, "..", "..", "Model"))
+if MODEL_DIR not in sys.path:
+    sys.path.insert(0, MODEL_DIR)
 
 import torch
 import numpy as np

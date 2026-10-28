@@ -7,8 +7,13 @@ sqlalchemy>=2.0.25
 python-dotenv>=1.0.0
 pydantic>=2.5.3
 
-# NeRF Model
+# NeRF Model & Visualization
 torch>=2.0.0
 numpy>=1.24.0
 imageio>=2.34.0
+matplotlib>=3.7.0
+pillow>=10.0.0
 tqdm>=4.66.0
+
+# Database (optional for PostgreSQL migrations)
+psycopg2-binary>=2.9.9

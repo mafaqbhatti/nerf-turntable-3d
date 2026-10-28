@@ -37,6 +37,7 @@ CONFIG = {
     'far': 6.0,               # Far clipping plane
     'radius': 4.0,            # Camera distance from object
     'elevation_deg': 30.0,    # Camera elevation angle
+    'hidden_dim': 256,        # MLP hidden dimension
 }
 
 # ==========================================================
@@ -272,7 +273,7 @@ class PositionalEncoding(nn.Module):
 # NeRF NETWORK
 # ==========================================================
 class NeRF(nn.Module):
-    def __init__(self, pos_freqs=10, dir_freqs=4, hidden_dim=512, num_layers=8):
+    def __init__(self, pos_freqs=10, dir_freqs=4, hidden_dim=256, num_layers=8):
         super().__init__()
         self.pos_encoder = PositionalEncoding(pos_freqs)
         self.dir_encoder = PositionalEncoding(dir_freqs)
@@ -546,6 +547,8 @@ def main():
                         help='Camera elevation angle in degrees')
     parser.add_argument('--render_gif', action='store_true',
                         help='Render 360° GIF animation')
+    parser.add_argument('--hidden_dim', type=int, default=CONFIG.get('hidden_dim', 256),
+                        help='MLP hidden dimension')
     args = parser.parse_args()
     
     print(f"Using device: {device}")
@@ -578,7 +581,7 @@ def main():
     data.show_samples()
     
     # Create model
-    model = NeRF().to(device)
+    model = NeRF(hidden_dim=args.hidden_dim).to(device)
     print(f"\nNeRF model: {sum(p.numel() for p in model.parameters()):,} parameters")
     
     # Create renderer and trainer
