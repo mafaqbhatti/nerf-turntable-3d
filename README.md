@@ -12,11 +12,7 @@ A PyTorch implementation of **Neural Radiance Fields (NeRF)** that turns a set o
 
 ## Demo
 
-![NeRF 360° Turntable Demo](sample_video.gif)
-
-*360° novel-view turntable animation synthesized by the trained NeRF model.*
-
-🎬 **[▶️ View / Download High-Definition MP4 Video (`sample_video.mp4`)](sample_video.mp4)**
+![sample_video.gif](sample_video.gif)
 
 ---
 
