@@ -8,6 +8,7 @@ A from-scratch PyTorch implementation of **Neural Radiance Fields (NeRF)** that 
 
 ## Demo
 
+![NeRF 360° render](Web%20App/backend/sample.gif)
 `Web App/backend/sample.gif` is an example 360° render produced by the trained model included in this repo.
 
 ## What is a NeRF?
