@@ -1,0 +1,14 @@
+# NeRF Web App Dependencies
+
+# Backend (FastAPI)
+fastapi>=0.109.0
+uvicorn>=0.27.0
+sqlalchemy>=2.0.25
+python-dotenv>=1.0.0
+pydantic>=2.5.3
+
+# NeRF Model
+torch>=2.0.0
+numpy>=1.24.0
+imageio>=2.34.0
+tqdm>=4.66.0
